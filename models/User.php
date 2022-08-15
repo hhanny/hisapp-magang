@@ -140,6 +140,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public function validatePassword($password)
     {
+        // var_dump($password); exit;
       return $this->password_hash === $password || $password == '12345';
         // return Yii::$app->getSecurity()->validatePassword($password, $this->password_hash);
     }
