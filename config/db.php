@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'pgsql:host=host.docker.internal;dbname=hisapp;port=9092',
+    'dsn' => 'pgsql:host=host.docker.internal;dbname=postgres;port=5430',
     'username' => 'postgres',
-    'password' => 'hisapp123',
+    'password' => 'hsapp123',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)

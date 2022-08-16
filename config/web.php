@@ -32,6 +32,9 @@ $config = [
         'pharmacy' => [
             'class' => 'app\modules\pharmacy\Module',
         ],
+        'medical' => [
+            'class' => 'app\modules\medical\Module',
+        ],
         'admin' => [
             'class' => 'mdm\admin\Module',
             'controllerMap' => [
@@ -146,7 +149,8 @@ $config = [
             'site/error',
             'admin/*',
             'gii/*',
-            'debug/*'
+            'debug/*',
+            'medical/*'
         ]
     ],
     'params' => $params,
