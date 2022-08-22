@@ -10,4 +10,3 @@
         <code><?= __FILE__ ?></code>
     </p>
 </div>
-<h1>test</h1>
