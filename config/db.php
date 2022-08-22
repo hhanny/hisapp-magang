@@ -2,7 +2,6 @@
 
 return [
     'class' => 'yii\db\Connection',
-
     'dsn' => 'pgsql:host=host.docker.internal;dbname=postgres;port=9092',
     'username' => 'postgres',
     'password' => 'hisapp123',
