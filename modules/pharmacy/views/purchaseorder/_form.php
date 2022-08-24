@@ -50,6 +50,7 @@ use app\models\Unit;
                         <div class="col-md-4 mb-3">
                             <label for="validationCustom07"><?= PurchaseOrder::instance()->getAttributeLabel('unit_id') ?></label>
                             <?= $form->field($model, 'unit_id')->dropDownList(ArrayHelper::map(Unit::find()->struktural()->orderBy('unit_name')->all(), 'unit_id', 'unit_name'), ['prompt' => 'Select'])->label(false) ?>
+                            
                         </div>
                     </div>
                     <div class="form-row">

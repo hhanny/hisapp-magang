@@ -2,17 +2,22 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Mrrekammedik;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Mrrekammedik */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
+
+
 <div class="mrrekammedik-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'jenisctev_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'jenisctev_id')->dropDownList(ArrayHelper::map(Mrrekammedik::getActive(), 'supplier_id', 'name'), ['prompt' => 'Select', 'class' => 'select2-show-search form-select select2'])->label(false) ?>
 
     <?= $form->field($model, 'infonoso_id')->textInput() ?>
 

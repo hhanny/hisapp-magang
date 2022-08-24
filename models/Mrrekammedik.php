@@ -85,6 +85,8 @@ class Mrrekammedik extends \yii\db\ActiveRecord
         ];
     }
 
+    
+
     /**
      * Gets query for [[Ugddiagnosa]].
      *
@@ -173,5 +175,10 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     public function getUgdlayanan()
     {
         return $this->hasOne(Mrugdlayanan::className(), ['ugdlayanan_id' => 'ugdlayanan_id']);
+    }
+    
+    public static function getActive()
+    {
+        return self::find()->where(['is_active' => true, 'hospital_id' => Yii::$app->user->identity->hospital_id])->all();
     }
 }
