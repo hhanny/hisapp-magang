@@ -8,6 +8,8 @@ use app\models\Mrrekammediksearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+// use yii\modules\medical\controllers\Mrrekammedik;
+
 
 /**
  * MrrekammedikController implements the CRUD actions for Mrrekammedik model.
@@ -65,7 +67,10 @@ class MrrekammedikController extends Controller
     public function actionCreate()
     {
         $model = new Mrrekammedik();
-
+        // $jenis_ctev = Mrrekammedik::getAllJenisctev();
+        // echo '<pre>';
+        // print_r($jenis_ctev);
+        // die();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->rekammedik_id]);
         }

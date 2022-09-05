@@ -1,6 +1,9 @@
 <?php
 
 namespace app\models;
+use yii\helpers\ArrayHelper;
+
+
 
 use Yii;
 
@@ -125,6 +128,9 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     public function getJenisctev()
     {
         return $this->hasOne(Mrjenisctev::className(), ['jenisctev_id' => 'jenisctev_id']);
+        // $jenisctev = Mrjenisctev::find()->all();
+        // $jenisctev = ArrayHelper::map($jenisctev, 'jenisctev_id', 'jenis_ctev');
+        // return $jenisctev;
     }
 
     /**
@@ -181,4 +187,12 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     {
         return self::find()->where(['is_active' => true, 'hospital_id' => Yii::$app->user->identity->hospital_id])->all();
     }
+
+    // public static function getAllJenisctev()
+    // {
+    //     $jenisctev = Mrjenisctev::find()->all();
+    //     $jenisctev = ArrayHelper::map($jenisctev, 'jenisctev_id', 'jenis_ctev');
+    //     return $jenisctev;
+    // }
+
 }
