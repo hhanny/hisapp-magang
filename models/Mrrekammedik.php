@@ -95,6 +95,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getUgddiagnosa()
     {
         return $this->hasOne(Mrdiagnosaawal::className(), ['ugddiagnosa_id' => 'ugddiagnosa_id']);
@@ -105,6 +106,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getTunaKode()
     {
         return $this->hasOne(Mrdisabilitas::className(), ['tuna_kode' => 'tuna_kode']);
@@ -115,6 +117,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getInfonoso()
     {
         return $this->hasOne(Mrinfeksinosokomial::className(), ['infonoso_id' => 'infonoso_id']);
@@ -125,12 +128,14 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getJenisctev()
     {
-        return $this->hasOne(Mrjenisctev::className(), ['jenisctev_id' => 'jenisctev_id']);
+        // return $this->hasOne(Mrjenisctev::className(), ['jenisctev_id' => 'jenisctev_id']);
         // $jenisctev = Mrjenisctev::find()->all();
         // $jenisctev = ArrayHelper::map($jenisctev, 'jenisctev_id', 'jenis_ctev');
         // return $jenisctev;
+        return $this->hasOne(Mrjenisctev::className(), ['jenisctev_id' => 'jenisctev_id']);
     }
 
     /**
@@ -138,6 +143,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getKasus()
     {
         return $this->hasOne(Mrkasus::className(), ['kasus_id' => 'kasus_id']);
@@ -148,6 +154,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getStatuskembali()
     {
         return $this->hasOne(Mrstatuskembali::className(), ['statuskembali_id' => 'statuskembali_id']);
@@ -158,6 +165,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getStatuslengkap()
     {
         return $this->hasOne(Mrstatuslengkap::className(), ['statuslengkap_id' => 'statuslengkap_id']);
@@ -168,6 +176,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getAlasandirujuk()
     {
         return $this->hasOne(Mrugdalasandirujuk::className(), ['alasandirujuk_id' => 'alasandirujuk_id']);
@@ -178,6 +187,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getUgdlayanan()
     {
         return $this->hasOne(Mrugdlayanan::className(), ['ugdlayanan_id' => 'ugdlayanan_id']);
@@ -194,5 +204,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     //     $jenisctev = ArrayHelper::map($jenisctev, 'jenisctev_id', 'jenis_ctev');
     //     return $jenisctev;
     // }
+
+    
 
 }

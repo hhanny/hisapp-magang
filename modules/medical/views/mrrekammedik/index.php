@@ -26,18 +26,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
+            //* berelasi dengan rekam medik *//
             'rekammedik_id',
-            'jenisctev_id',
-            'infonoso_id',
-            'kasus_id',
-            'statuskembali_id',
-            //'tuna_kode',
-            //'statuslengkap_id',
-            //'ugdlayanan_id',
-            //'alasandirujuk_id',
-            //'ugddiagnosa_id',
-            //'no_reg',
-            //'anemnesa',
+            //'jenisctev.jenis_ctev',
+            //'infonoso.infeksi_nosokomial',
+            //'kasus.nama_kasus',
+            //'statuskembali.nama_statuskembali',
+            //'tunaKode.tuna_nama',
+            //'statuslengkap.nama_statuslengkap',
+            //'ugdlayanan.ugd_layanan',
+            //'alasandirujuk.alasan_dirujuk',
+            //'ugddiagnosa.tanggal_kontrol',
+            'no_reg',
+            'anemnesa',
+
+            
+
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
