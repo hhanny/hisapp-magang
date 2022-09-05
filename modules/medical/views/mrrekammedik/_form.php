@@ -2,17 +2,25 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Mrrekammedik */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
+  
 <div class="mrrekammedik-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'jenisctev_id')->textInput(['maxlength' => true]) ?>
+    <?php
+    $dataPost=ArrayHelper::map(\app\models\Mrjenisctev::find()
+        ->asArray()->all(), 'jenisctev_id', 'Jenisctev ID');
+    echo $form->field($model, 'jenisctev_id')
+        ->dropDownList(
+            ['01'=>'clubfoot','02'=>'jari keriting']
+        );
+    ?> 
 
     <?= $form->field($model, 'infonoso_id')->textInput() ?>
 
