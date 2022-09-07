@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //* berelasi dengan rekam medik *//
             'rekammedik_id',
-            //'jenisctev.jenis_ctev',
+            'jenisctev.jenis_ctev',
             //'infonoso.infeksi_nosokomial',
             //'kasus.nama_kasus',
             //'statuskembali.nama_statuskembali',
@@ -39,6 +39,8 @@ $this->params['breadcrumbs'][] = $this->title;
             //'ugddiagnosa.tanggal_kontrol',
             'no_reg',
             'anemnesa',
+            'dokter_id',
+
 
             
 

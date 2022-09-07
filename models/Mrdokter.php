@@ -7,7 +7,8 @@ use Yii;
 /**
  * This is the model class for table "mrdokter".
  *
- * @property string|null $dokter_kode
+ * @property int $dokter_id
+ * @property string|null $dokter_code
  * @property string|null $spesialis
  */
 class Mrdokter extends \yii\db\ActiveRecord
@@ -26,7 +27,7 @@ class Mrdokter extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['dokter_kode'], 'string', 'max' => 6],
+            [['dokter_code'], 'string', 'max' => 6],
             [['spesialis'], 'string', 'max' => 20],
         ];
     }
@@ -37,9 +38,14 @@ class Mrdokter extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'dokter_kode' => 'Dokter Kode',
+            'dokter_id' => 'Dokter ID',
+            'dokter_code' => 'Dokter Code',
             'spesialis' => 'Spesialis',
         ];
     }
 
+    public function getMrdokterr()
+    {
+        return $this->hasOne(Mrdokter::className(), ['dokter_id' => 'dokter_id']);
+    }
 }

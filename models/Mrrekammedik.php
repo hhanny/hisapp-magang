@@ -205,6 +205,11 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     //     return $jenisctev;
     // }
 
+    // public function getMrrekammediks()
+    // {
+    //     return $this->hasOne(Mrdisabilitas::className(), ['rekammedik_id' => 'rekammedik_id']);
+    // }
+
     
 
 }

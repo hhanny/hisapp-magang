@@ -41,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'ugddiagnosa_id',
             'no_reg',
             'anemnesa',
+            'dokter_id',
         ],
     ]) ?>
 
