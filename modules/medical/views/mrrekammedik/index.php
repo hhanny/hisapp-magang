@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        //'dokterModel' => $dokterModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -40,6 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'no_reg',
             'anemnesa',
             'dokter_id',
+            //'mricd',
 
 
             

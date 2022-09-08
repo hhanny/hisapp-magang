@@ -44,8 +44,8 @@ class Mrdokter extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getMrdokterr()
-    {
-        return $this->hasOne(Mrdokter::className(), ['dokter_id' => 'dokter_id']);
-    }
+    // public function getMrdokterr()
+    // {
+    //     return $this->hasOne(Mrdokter::className(), ['dokter_id' => 'dokter_id']);
+    // }
 }

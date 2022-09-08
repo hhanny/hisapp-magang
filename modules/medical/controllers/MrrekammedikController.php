@@ -5,6 +5,7 @@ namespace app\modules\medical\controllers;
 use Yii;
 use app\models\Mrrekammedik;
 use app\models\Mrrekammediksearch;
+use app\models\Mrdoktersearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -38,11 +39,15 @@ class MrrekammedikController extends Controller
     public function actionIndex()
     {
         $searchModel = new Mrrekammediksearch();
+        //$searchModel = new Mrdoktersearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        //$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        //var_dump($dataProvider); exit();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            
+            
         ]);
     }
 
