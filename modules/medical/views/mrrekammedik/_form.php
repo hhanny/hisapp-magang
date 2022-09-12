@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Mrrekammedik */
 /* @var $form yii\widgets\ActiveForm */
@@ -29,7 +30,7 @@ use yii\helpers\ArrayHelper;
     <?= $form->field($model, 'statuskembali_id')->textInput() ?>
 
     <?= $form->field($model, 'tuna_kode')->textInput(['maxlength' => true]) ?>
-
+ 
     <?= $form->field($model, 'statuslengkap_id')->textInput() ?>
 
     <?= $form->field($model, 'ugdlayanan_id')->textInput(['maxlength' => true]) ?>
