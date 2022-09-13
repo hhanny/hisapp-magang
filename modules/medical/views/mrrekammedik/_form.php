@@ -17,26 +17,6 @@ use app\models\Mrrekammedik;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php
-    $dataPost=ArrayHelper::map(\app\models\Mrjenisctev::find()
-        ->asArray()->all(), 'jenisctev_id', 'jenis_ctev');
-    echo $form->field($model, 'jenisctev_id')
-        ->dropDownList(
-            $dataPost,
-            // ['jenisctev_id'=>'Jenisctev ID']
-        );
-    ?>
-    
-    <?php
-    $dataPost=ArrayHelper::map(\app\models\Mrinfeksinosokomial::find()
-        ->asArray()->all(), 'infonoso_id', 'infeksi_nosokomial');
-    echo $form->field($model, 'infonoso_id')
-        ->dropDownList(
-            $dataPost,
-            // ['infonoso_id'=>'Infonoso ID']
-        );
-    ?>
-
-    <?php
         $dataPost=ArrayHelper::map(\app\models\Mrkasus::find()
             ->asArray()->all(), 'kasus_id', 'nama_kasus');
         echo $form->field($model, 'kasus_id')
@@ -53,16 +33,6 @@ use app\models\Mrrekammedik;
             ->dropDownList(
                 $dataPost,
                 // ['statuskembali_id'=>'Statuskembali ID']
-            );
-    ?>
-
-    <?php
-        $dataPost=ArrayHelper::map(\app\models\Mrdisabilitas::find()
-            ->asArray()->all(), 'tuna_kode', 'tuna_nama');
-        echo $form->field($model, 'tuna_kode')
-            ->dropDownList(
-                $dataPost,
-                // ['tuna_kode'=>'Tuna Kode']
             );
     ?>
 
@@ -107,8 +77,6 @@ use app\models\Mrrekammedik;
     ?>  
 
     <?= $form->field($model, 'no_reg')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'anemnesa')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

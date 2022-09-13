@@ -74,16 +74,16 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     {
         return [
             'rekammedik_id' => 'Rekammedik ID',
-            'jenisctev_id' => 'Jenisctev ID',
-            'infonoso_id' => 'Infonoso ID',
-            'kasus_id' => 'Kasus ID',
-            'statuskembali_id' => 'Statuskembali ID',
+            'jenisctev_id' => 'Jenis CTEV',
+            'infonoso_id' => 'Jenis Infeksi Nosokomial',
+            'kasus_id' => 'Nama Kasus',
+            'statuskembali_id' => 'Status Kembali',
             'tuna_kode' => 'Tuna Kode',
-            'statuslengkap_id' => 'Statuslengkap ID',
-            'ugdlayanan_id' => 'Ugdlayanan ID',
-            'alasandirujuk_id' => 'Alasandirujuk ID',
-            'ugddiagnosa_id' => 'Ugddiagnosa ID',
-            'no_reg' => 'Registration Number',
+            'statuslengkap_id' => 'Status Lengkap',
+            'ugdlayanan_id' => 'UGD Layanan',
+            'alasandirujuk_id' => 'Alasan Dirujuk',
+            'ugddiagnosa_id' => 'UGD Diagnosa',
+            'no_reg' => 'Nomor Registrasi',
             'anemnesa' => 'Anemnesa',
         ];
     }
