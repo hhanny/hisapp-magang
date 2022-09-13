@@ -11,7 +11,7 @@ use yii\grid\GridView;
 $this->title = 'Medical Records';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="mrrekammedik-index">
+<!-- <div class="mrrekammedik-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -21,7 +21,21 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
+    
+</div> -->
+
+<div class="col-lg-12 col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <?= Html::encode($this->title) ?></h3>
+            <div class=card-options>
+                <?= Html::a('<i class="fa fa-plus-circle"> Create</i>', ['create'], ['class' => 'btn btn-primary btn-sm']) ?>
+            </div>
+        </div>
+        <div class="card-body pt-2">
+            
+            <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+            <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         //'dokterModel' => $dokterModel,
@@ -44,4 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+            
+        </div>
+    </div>
 </div>
