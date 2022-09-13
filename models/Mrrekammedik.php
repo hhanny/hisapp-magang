@@ -83,7 +83,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
             'ugdlayanan_id' => 'Ugdlayanan ID',
             'alasandirujuk_id' => 'Alasandirujuk ID',
             'ugddiagnosa_id' => 'Ugddiagnosa ID',
-            'no_reg' => 'No Reg',
+            'no_reg' => 'Registration Number',
             'anemnesa' => 'Anemnesa',
         ];
     }

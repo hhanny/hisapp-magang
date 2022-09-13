@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\Mrrekammediksearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -28,26 +29,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //* berelasi dengan rekam medik *//
-            'rekammedik_id',
-            'jenisctev.jenis_ctev',
+            //'rekammedik_id',
+            //'jenisctev.jenis_ctev',
             //'infonoso.infeksi_nosokomial',
-            //'kasus.nama_kasus',
-            //'statuskembali.nama_statuskembali',
+            'kasus.nama_kasus',
+            'statuskembali.nama_statuskembali',
             //'tunaKode.tuna_nama',
-            //'statuslengkap.nama_statuslengkap',
-            //'ugdlayanan.ugd_layanan',
-            //'alasandirujuk.alasan_dirujuk',
-            //'ugddiagnosa.tanggal_kontrol',
+            'statuslengkap.nama_statuslengkap',
+            'ugdlayanan.ugd_layanan',
+            'alasandirujuk.alasan_dirujuk',
+            'ugddiagnosa.tanggal_kontrol',
             'no_reg',
-            'anemnesa',
-            'dokter_id',
-            //'mricd',
-
-
-            
-
-
-
+            //'anemnesa',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
