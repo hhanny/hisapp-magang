@@ -68,7 +68,7 @@ use app\models\Mrrekammedik;
 
     <?php
         $dataPost=ArrayHelper::map(\app\models\Mrdiagnosaawal::find()
-            ->asArray()->all(), 'ugddiagnosa_id', 'keterangan');
+            ->asArray()->all(), 'ugddiagnosa_id', 'tanggal_kontrol');
         echo $form->field($model, 'ugddiagnosa_id')
             ->dropDownList(
                 $dataPost,

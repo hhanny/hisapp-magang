@@ -45,7 +45,7 @@ class Mrdiagnosaawal extends \yii\db\ActiveRecord
         return [
             'ugddiagnosa_id' => 'Ugddiagnosa ID',
             'keterangan' => 'Keterangan',
-            'tanggal_kontrol' => 'Tanggal Kontrol',
+            'tanggal_kontrol' => 'Control Date',
         ];
     }
 

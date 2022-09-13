@@ -42,7 +42,7 @@ class Mrugdlayanan extends \yii\db\ActiveRecord
     {
         return [
             'ugdlayanan_id' => 'Ugdlayanan ID',
-            'ugd_layanan' => 'Ugd Layanan',
+            'ugd_layanan' => 'Emergency Service',
         ];
     }
 
