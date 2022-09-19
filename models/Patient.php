@@ -114,7 +114,7 @@ class Patient extends \yii\db\ActiveRecord
             'ethnic_id' => Yii::t('app', 'Ethnic ID'),
             'hospital_id' => Yii::t('app', 'Hospital ID'),
             'mr_number' => Yii::t('app', 'No RM'),
-            'fullname' => Yii::t('app', 'Nama Lengkap'),
+            'fullname' => Yii::t('app', 'Full Name'),
             'nickname' => Yii::t('app', 'Nama Panggilan'),
             'identity_number' => Yii::t('app', 'KTP/SIM'),
             'address' => Yii::t('app', 'Address'),
@@ -314,3 +314,4 @@ class Patient extends \yii\db\ActiveRecord
         return $this->subdistrict->subdistrict_name . '/' . $this->subdistrict->district->district_name . '/' . $this->subdistrict->district->prv->prv_name;
     }
 }
+

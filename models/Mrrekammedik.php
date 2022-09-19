@@ -73,7 +73,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'rekammedik_id' => 'Rekammedik ID',
+            'rekammedik_id' => 'Medical Records Number',
             'jenisctev_id' => 'Jenis CTEV',
             'infonoso_id' => 'Jenis Infeksi Nosokomial',
             'kasus_id' => 'Case Name',
@@ -193,22 +193,22 @@ class Mrrekammedik extends \yii\db\ActiveRecord
         return $this->hasOne(Mrugdlayanan::className(), ['ugdlayanan_id' => 'ugdlayanan_id']);
     }
     
+    public function getRegistrations()
+    {
+        return $this->hasOne(Registration::className(), ['registration_id' => 'registration_id']);
+    }
+
+    public function getPatients()
+    {
+        return $this->hasOne(Patient::className(), ['patient_id' => 'patient_id']);
+    }
+
     public static function getActive()
     {
         return self::find()->where(['is_active' => true, 'hospital_id' => Yii::$app->user->identity->hospital_id])->all();
     }
 
-    // public static function getAllJenisctev()
-    // {
-    //     $jenisctev = Mrjenisctev::find()->all();
-    //     $jenisctev = ArrayHelper::map($jenisctev, 'jenisctev_id', 'jenis_ctev');
-    //     return $jenisctev;
-    // }
-
-    // public function getMrrekammediks()
-    // {
-    //     return $this->hasOne(Mrdisabilitas::className(), ['rekammedik_id' => 'rekammedik_id']);
-    // }
+    
 
     
 

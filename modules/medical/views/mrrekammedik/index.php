@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\Pjax;
 
 
 /* @var $this yii\web\View */
@@ -33,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <div class="card-body pt-2">
+        <?php Pjax::begin(); ?>
             
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
             <?= GridView::widget([
@@ -43,22 +45,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //* berelasi dengan rekam medik *//
-            //'rekammedik_id',
+            'rekammedik_id',
             //'jenisctev.jenis_ctev',
             //'infonoso.infeksi_nosokomial',
             'kasus.nama_kasus',
-            'statuskembali.nama_statuskembali',
+            //'statuskembali.nama_statuskembali',
             //'tunaKode.tuna_nama',
             'statuslengkap.nama_statuslengkap',
-            'ugdlayanan.ugd_layanan',
-            'alasandirujuk.alasan_dirujuk',
+            //'ugdlayanan.ugd_layanan',
+            //'alasandirujuk.alasan_dirujuk',
             'ugddiagnosa.tanggal_kontrol',
             'no_reg',
+            'patients.fullname',
             //'anemnesa',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-            
+            <?php Pjax::end(); ?>
         </div>
     </div>
 </div>
