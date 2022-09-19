@@ -1,9 +1,7 @@
 <?php
-
 namespace app\models;
-
+use yii\helpers\ArrayHelper;
 use Yii;
-
 /**
  * This is the model class for table "mrrekammedik".
  *
@@ -39,7 +37,6 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     {
         return 'mrrekammedik';
     }
-
     /**
      * {@inheritdoc}
      */
@@ -63,7 +60,6 @@ class Mrrekammedik extends \yii\db\ActiveRecord
             [['ugdlayanan_id'], 'exist', 'skipOnError' => true, 'targetClass' => Mrugdlayanan::className(), 'targetAttribute' => ['ugdlayanan_id' => 'ugdlayanan_id']],
         ];
     }
-
     /**
      * {@inheritdoc}
      */
@@ -71,107 +67,128 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     {
         return [
             'rekammedik_id' => 'Rekammedik ID',
-            'jenisctev_id' => 'Jenisctev ID',
-            'infonoso_id' => 'Infonoso ID',
-            'kasus_id' => 'Kasus ID',
-            'statuskembali_id' => 'Statuskembali ID',
+            'jenisctev_id' => 'Jenis CTEV',
+            'infonoso_id' => 'Jenis Infeksi Nosokomial',
+            'kasus_id' => 'Case Name',
+            'statuskembali_id' => 'Back Status',
             'tuna_kode' => 'Tuna Kode',
-            'statuslengkap_id' => 'Statuslengkap ID',
-            'ugdlayanan_id' => 'Ugdlayanan ID',
-            'alasandirujuk_id' => 'Alasandirujuk ID',
-            'ugddiagnosa_id' => 'Ugddiagnosa ID',
-            'no_reg' => 'No Reg',
+            'statuslengkap_id' => 'Full Status',
+            'ugdlayanan_id' => 'Emergency Service',
+            'alasandirujuk_id' => 'Reason for Referral',
+            'ugddiagnosa_id' => 'Control Date',
+            'no_reg' => 'Registration Number',
             'anemnesa' => 'Anemnesa',
         ];
     }
-
+    
     /**
      * Gets query for [[Ugddiagnosa]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getUgddiagnosa()
     {
         return $this->hasOne(Mrdiagnosaawal::className(), ['ugddiagnosa_id' => 'ugddiagnosa_id']);
     }
-
     /**
      * Gets query for [[TunaKode]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getTunaKode()
     {
         return $this->hasOne(Mrdisabilitas::className(), ['tuna_kode' => 'tuna_kode']);
     }
-
     /**
      * Gets query for [[Infonoso]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getInfonoso()
     {
         return $this->hasOne(Mrinfeksinosokomial::className(), ['infonoso_id' => 'infonoso_id']);
     }
-
     /**
      * Gets query for [[Jenisctev]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getJenisctev()
     {
+        // return $this->hasOne(Mrjenisctev::className(), ['jenisctev_id' => 'jenisctev_id']);
+        // $jenisctev = Mrjenisctev::find()->all();
+        // $jenisctev = ArrayHelper::map($jenisctev, 'jenisctev_id', 'jenis_ctev');
+        // return $jenisctev;
         return $this->hasOne(Mrjenisctev::className(), ['jenisctev_id' => 'jenisctev_id']);
     }
-
     /**
      * Gets query for [[Kasus]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getKasus()
     {
         return $this->hasOne(Mrkasus::className(), ['kasus_id' => 'kasus_id']);
     }
-
     /**
      * Gets query for [[Statuskembali]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getStatuskembali()
     {
         return $this->hasOne(Mrstatuskembali::className(), ['statuskembali_id' => 'statuskembali_id']);
     }
-
     /**
      * Gets query for [[Statuslengkap]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getStatuslengkap()
     {
         return $this->hasOne(Mrstatuslengkap::className(), ['statuslengkap_id' => 'statuslengkap_id']);
     }
-
     /**
      * Gets query for [[Alasandirujuk]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getAlasandirujuk()
     {
         return $this->hasOne(Mrugdalasandirujuk::className(), ['alasandirujuk_id' => 'alasandirujuk_id']);
     }
-
     /**
      * Gets query for [[Ugdlayanan]].
      *
      * @return \yii\db\ActiveQuery
      */
+    // done //
     public function getUgdlayanan()
     {
         return $this->hasOne(Mrugdlayanan::className(), ['ugdlayanan_id' => 'ugdlayanan_id']);
     }
+    
+    public static function getActive()
+    {
+        return self::find()->where(['is_active' => true, 'hospital_id' => Yii::$app->user->identity->hospital_id])->all();
+    }
+    // public static function getAllJenisctev()
+    // {
+    //     $jenisctev = Mrjenisctev::find()->all();
+    //     $jenisctev = ArrayHelper::map($jenisctev, 'jenisctev_id', 'jenis_ctev');
+    //     return $jenisctev;
+    // }
+    // public function getMrrekammediks()
+    // {
+    //     return $this->hasOne(Mrdisabilitas::className(), ['rekammedik_id' => 'rekammedik_id']);
+    // }
+    
 }

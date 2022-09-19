@@ -43,7 +43,7 @@ class Mrstatuskembali extends \yii\db\ActiveRecord
     {
         return [
             'statuskembali_id' => 'Statuskembali ID',
-            'nama_statuskembali' => 'Nama Statuskembali',
+            'nama_statuskembali' => 'Back Status Name',
         ];
     }
 

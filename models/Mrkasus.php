@@ -41,7 +41,7 @@ class Mrkasus extends \yii\db\ActiveRecord
     {
         return [
             'kasus_id' => 'Kasus ID',
-            'nama_kasus' => 'Nama Kasus',
+            'nama_kasus' => 'Case Name',
             'keterangan' => 'Keterangan',
         ];
     }

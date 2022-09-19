@@ -9,7 +9,6 @@
         You may customize this page by editing the following file:<br>
         <code><?= __FILE__ ?></code>
     </p>
-<<<<<<< HEAD
 </div>
 <h1>Putri Setiyaningrum</h1>
 </div>

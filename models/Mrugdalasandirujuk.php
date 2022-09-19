@@ -44,7 +44,7 @@ class Mrugdalasandirujuk extends \yii\db\ActiveRecord
     {
         return [
             'alasandirujuk_id' => 'Alasandirujuk ID',
-            'alasan_dirujuk' => 'Alasan Dirujuk',
+            'alasan_dirujuk' => 'Reason For Referral',
             'dirujuk_ke' => 'Dirujuk Ke',
         ];
     }

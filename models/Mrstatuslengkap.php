@@ -43,7 +43,7 @@ class Mrstatuslengkap extends \yii\db\ActiveRecord
     {
         return [
             'statuslengkap_id' => 'Statuslengkap ID',
-            'nama_statuslengkap' => 'Nama Statuslengkap',
+            'nama_statuslengkap' => 'Full Status name',
         ];
     }
 
