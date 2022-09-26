@@ -193,15 +193,20 @@ class Mrrekammedik extends \yii\db\ActiveRecord
         return $this->hasOne(Mrugdlayanan::className(), ['ugdlayanan_id' => 'ugdlayanan_id']);
     }
     
-    public function getRegistrations()
+    public function getRegistration()
     {
         return $this->hasOne(Registration::className(), ['registration_id' => 'registration_id']);
     }
 
-    public function getPatients()
+    public function getPatient()
     {
-        return $this->hasOne(Patient::className(), ['patient_id' => 'patient_id']);
+        return $this->hasMany(Patient::className(), ['patient_id' => 'patient_id']);
     }
+
+    // public function getPatient()
+    // {
+    //     return $this->hasMany(Patient::className(), ['patient_id' => 'patient_id']);
+    // }
 
     public static function getActive()
     {

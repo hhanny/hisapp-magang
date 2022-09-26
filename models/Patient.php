@@ -258,11 +258,12 @@ class Patient extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery|RegistrationQuery
      */
-    public function getRegistrations()
+    public function getRegistration()
     {
         return $this->hasMany(Registration::className(), ['patient_id' => 'patient_id']);
     }
 
+    
     /**
      * {@inheritdoc}
      * @return PatientQuery the active query used by this AR class.

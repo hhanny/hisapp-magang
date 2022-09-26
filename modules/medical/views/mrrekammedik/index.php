@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\models\Patient;
 
 
 /* @var $this yii\web\View */
@@ -45,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //* berelasi dengan rekam medik *//
-            'rekammedik_id',
+            // 'rekammedik_id',
             //'jenisctev.jenis_ctev',
             //'infonoso.infeksi_nosokomial',
             'kasus.nama_kasus',
@@ -56,9 +57,14 @@ $this->params['breadcrumbs'][] = $this->title;
             //'alasandirujuk.alasan_dirujuk',
             'ugddiagnosa.tanggal_kontrol',
             'no_reg',
-            'patients.fullname',
+            // 'registration.patient.fullname',
+            //'patients.fullname',
             //'anemnesa',
+            ['value' => function($data){
+                return $data->registration->patient->fullname;
+            }],
             ['class' => 'yii\grid\ActionColumn'],
+
         ],
     ]); ?>
             <?php Pjax::end(); ?>

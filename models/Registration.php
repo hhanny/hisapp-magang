@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 
+
 /**
  * This is the model class for table "registration".
  *
@@ -304,6 +305,7 @@ class Registration extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['user_id' => 'updated_by']);
     }
 
+
     /**
      * {@inheritdoc}
      * @return RegistrationQuery the active query used by this AR class.
@@ -333,6 +335,11 @@ class Registration extends \yii\db\ActiveRecord
             return true;
         }
         return false;
+    }
+
+    public function getRegistration()
+    {
+        return $this->hasOne(Registration::className(), ['registration_id' => 'registration_id']);
     }
 
     public function setIsNewUnit()

@@ -4,6 +4,7 @@ namespace app\modules\medical\controllers;
 
 use Yii;
 use app\models\Mrrekammedik;
+use app\models\Patient;
 use app\models\Mrrekammediksearch;
 use app\models\Mrdoktersearch;
 use yii\web\Controller;
@@ -46,8 +47,6 @@ class MrrekammedikController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            
-            
         ]);
     }
 
@@ -135,3 +134,4 @@ class MrrekammedikController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
+
