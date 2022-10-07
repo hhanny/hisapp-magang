@@ -11,7 +11,6 @@ class Module extends \yii\base\Module
      * {@inheritdoc}
      */
     public $controllerNamespace = 'app\modules\registrasi\controllers';
-    public $id = 'Registrasi';
 
     /**
      * {@inheritdoc}

@@ -11,6 +11,7 @@ use app\models\Mrrekammedik;
  */
 class Mrrekammediksearch extends Mrrekammedik
 {
+    // public $jenisctev;
     /**
      * {@inheritdoc}
      */
@@ -19,6 +20,7 @@ class Mrrekammediksearch extends Mrrekammedik
         return [
             [['rekammedik_id', 'infonoso_id', 'kasus_id', 'statuskembali_id', 'statuslengkap_id'], 'integer'],
             [['jenisctev_id', 'tuna_kode', 'ugdlayanan_id', 'alasandirujuk_id', 'ugddiagnosa_id', 'no_reg', 'anemnesa'], 'safe'],
+            // [['jenisctev_id', 'tuna_kode', 'ugdlayanan_id', 'alasandirujuk_id', 'ugddiagnosa_id', 'no_reg', 'anemnesa','jenisctev'], 'safe'],
         ];
     }
 
@@ -41,7 +43,7 @@ class Mrrekammediksearch extends Mrrekammedik
     public function search($params)
     {
         $query = Mrrekammedik::find();
-
+        $query->leftJoin('mrjenisctev', 'mrrekammedik.jenisctev_id = mrjenisctev.jenisctev_id');
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -72,6 +74,7 @@ class Mrrekammediksearch extends Mrrekammedik
             ->andFilterWhere(['ilike', 'ugddiagnosa_id', $this->ugddiagnosa_id])
             ->andFilterWhere(['ilike', 'no_reg', $this->no_reg])
             ->andFilterWhere(['ilike', 'anemnesa', $this->anemnesa]);
+            //->andFilterWhere(['ilike', 'mrjenisctev.jenis_ctev', $this->jenisctev]);
 
         return $dataProvider;
     }

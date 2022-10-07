@@ -22,6 +22,7 @@ class Mrjenisctev extends \yii\db\ActiveRecord
         return 'mrjenisctev';
     }
 
+
     /**
      * {@inheritdoc}
      */
@@ -54,5 +55,10 @@ class Mrjenisctev extends \yii\db\ActiveRecord
     public function getMrrekammediks()
     {
         return $this->hasMany(Mrrekammedik::className(), ['jenisctev_id' => 'jenisctev_id']);
+    }
+
+    public static function getActive()
+    {
+        return self::find()->where(['hospital_id' => Yii::$app->user->identity->hospital_id, 'is_active' => true])->all();
     }
 }

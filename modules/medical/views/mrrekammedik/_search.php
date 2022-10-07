@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Mrstatuslengkap;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Mrrekammediksearch */
@@ -27,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'tuna_kode') ?>
 
-    <?php // echo $form->field($model, 'statuslengkap_id') ?>
+    <?php  //echo $form->field($model, 'statuslengkap_id') ?>
 
     <?php // echo $form->field($model, 'ugdlayanan_id') ?>
 
@@ -47,3 +48,4 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+

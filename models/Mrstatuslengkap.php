@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+
 use Yii;
 
 /**
@@ -9,6 +10,7 @@ use Yii;
  *
  * @property int $statuslengkap_id
  * @property string|null $nama_statuslengkap
+ * @property int|null $statuslengkap_id
  *
  * @property Mrrekammedik[] $mrrekammediks
  */
@@ -33,6 +35,7 @@ class Mrstatuslengkap extends \yii\db\ActiveRecord
             [['statuslengkap_id'], 'integer'],
             [['nama_statuslengkap'], 'string', 'max' => 100],
             [['statuslengkap_id'], 'unique'],
+            [['nama_statuslengkap'], 'string', 'max' => 12],
         ];
     }
 
@@ -57,3 +60,5 @@ class Mrstatuslengkap extends \yii\db\ActiveRecord
         return $this->hasMany(Mrrekammedik::className(), ['statuslengkap_id' => 'statuslengkap_id']);
     }
 }
+
+//hanny//

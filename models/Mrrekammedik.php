@@ -5,6 +5,11 @@ use yii\helpers\ArrayHelper;
 
 
 
+use app\models\Mrstatuslengkap;
+use app\models\MrstatuslengkapSearch;
+
+
+
 use Yii;
 
 /**
@@ -30,7 +35,7 @@ use Yii;
  * @property Mrkasus $kasus
  * @property Mrstatuskembali $statuskembali
  * @property Mrstatuslengkap $statuslengkap
- * @property Mrugdalasandirujuk $alasandirujuk
+ * @property Mrugdalasandirujuk $alasandirujuk 
  * @property Mrugdlayanan $ugdlayanan
  */
 class Mrrekammedik extends \yii\db\ActiveRecord

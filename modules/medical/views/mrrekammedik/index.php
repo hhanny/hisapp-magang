@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use yii\models\Patient;
+use yii\models\Mrjenisctev;
 
 
 /* @var $this yii\web\View */
@@ -21,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create New Record', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
 
     
 </div> -->
@@ -36,18 +37,29 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="card-body pt-2">
         <?php Pjax::begin(); ?>
+
             
-            <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+            <?php  //echo $this->render('_search', ['model' => $searchModel]); ?>
             <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        
         //'dokterModel' => $dokterModel,
+        
         'columns' => [
+            
             ['class' => 'yii\grid\SerialColumn'],
 
-            //* berelasi dengan rekam medik *//
-            // 'rekammedik_id',
-            //'jenisctev.jenis_ctev',
+            // [
+            //     'attribute' => 'jenisctev_id',
+            //     'value' => function ($model) {
+            //         return $model->mrjenisctev->jenis_ctev;
+            //     }
+                
+            // ],
+
+            //'rekammedik_id',
+            'jenisctev.jenis_ctev',
             //'infonoso.infeksi_nosokomial',
             'kasus.nama_kasus',
             //'statuskembali.nama_statuskembali',
@@ -57,12 +69,9 @@ $this->params['breadcrumbs'][] = $this->title;
             //'alasandirujuk.alasan_dirujuk',
             'ugddiagnosa.tanggal_kontrol',
             'no_reg',
-            // 'registration.patient.fullname',
+            'registration.patient.fullname',
             //'patients.fullname',
             //'anemnesa',
-            ['value' => function($data){
-                return $data->registration->patient->fullname;
-            }],
             ['class' => 'yii\grid\ActionColumn'],
 
         ],
