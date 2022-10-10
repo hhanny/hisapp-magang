@@ -1,0 +1,33 @@
+{
+    "name": "defyma/yii2-encrypt-url",
+    "description": "Yii 2 Encrypt Url",
+    "keywords": ["yii2", "helper", "encrypt", "url"],
+    "homepage": "http://www.defyma.com/",
+    "type": "helper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Defy Ma",
+            "email": "defyma85@gmail.com"
+        }
+    ],
+	"repositories":[
+		{
+			"type": "git",
+			"url": "https://github.com/defyma/yii2-encrypt-url"
+		}
+	],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "defyma\\helper\\": ""
+        }
+    },
+	"minimum-stability": "dev",
+    "prefer-stable": true,
+	"branch-alias": {
+        "dev-master": "1.x-dev"
+    }
+}
