@@ -37,7 +37,9 @@ class RegistrationController extends Controller
     public function actionIndex()
     {
         $searchModel = new RegistrationSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->post(), false, Registration::Active);
+        $dataProvider = $searchModel->search(Yii::$app->request->get(), false, Registration::Active);
+        //(Yii::$app->request->queryParams);
+        //(Yii::$params, $is_inpatient, $regstatus);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

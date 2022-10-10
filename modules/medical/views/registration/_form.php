@@ -2,13 +2,14 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Registration */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="registration-form">
+<!-- <div class="registration-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -80,4 +81,134 @@ use yii\widgets\ActiveForm;
 
     <?php ActiveForm::end(); ?>
 
+</div> -->
+
+<div class="registration-form">
+<?php $form = ActiveForm::begin([
+        'id' => 'registration_id',
+        'encodeErrorSummary' => false,
+        'errorSummaryCssClass' => 'help-block'
+]); ?>
+<?= $form->errorSummary($model, ['class'=>'alert alert-danger']) ?>
+
+
+<div class="row">
+    <div class="col-lg-4 col-md-12">
+        <!-- <?= $form->field($model, 'registration_id')->textInput(['maxlength' => true, 'readonly' => $readonly]) ?> -->
+        <?php
+        $dataPost=ArrayHelper::map(\app\models\Mrrekammedik::find()
+            ->asArray()->all(), 'rekammedik_id', 'anemnesa');
+        echo $form->field($model, 'anemnesa')
+            ->dropDownList(
+                $dataPost,
+            );
+        ?>
+    </div>
+    
+    <div class="col-lg-4 col-md-12">
+        <!-- <?= $form->field($model, 'doctor_id')->textInput(['maxlength' => true]) ?> -->
+        <?php
+        $dataPost=ArrayHelper::map(\app\models\Mrjenisctev::find()
+            ->asArray()->all(), 'jenisctev_id', 'jenis_ctev');
+        echo $form->field($model, 'jenis_ctev')
+            ->dropDownList(
+                $dataPost,
+            );
+        ?>
+    </div>
+
+    <div class="col-lg-4 col-md-12">
+        <!-- <?= $form->field($model, 'hospital_id')->textInput(['maxlength' => true]) ?> -->
+        <?php
+        $dataPost=ArrayHelper::map(\app\models\Mrtipetindakan::find()
+            ->asArray()->all(), 'tipetindakan_id', 'tipe_tindakan');
+        echo $form->field($model, 'tipe_tindakan')
+            ->dropDownList(
+                $dataPost,
+            );
+        ?>
+    </div>
 </div>
+
+<h4><p><b>Diagnosa Utama</b></p></h4>
+<div class="row">
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'registration_id')->textInput(['maxlength' => true, 'readonly' => $readonly]) ?>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'doctor_id')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'hospital_id')->textInput(['maxlength' => true]) ?>
+    </div>
+</div>
+<h4><p><b>Diagnosa Ke-2</b></p></h4>
+<div class="row">
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'registration_id')->textInput(['maxlength' => true, 'readonly' => $readonly]) ?>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'doctor_id')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'hospital_id')->textInput(['maxlength' => true]) ?>
+    </div>
+</div>
+<h4><p><b>Diagnosa Ke-3</b></p></h4>
+<div class="row">
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'registration_id')->textInput(['maxlength' => true, 'readonly' => $readonly]) ?>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'doctor_id')->textInput(['maxlength' => true]) ?>
+    </div>
+    <div class="col-lg-4 col-md-12">
+        <?= $form->field($model, 'hospital_id')->textInput(['maxlength' => true]) ?>
+    </div>
+</div>
+
+<h4><p><b>Tindakan</b></p></h4>
+<div class="row">
+    <div class="col-lg-4 col-md-12">
+        <!-- <?= $form->field($model, 'registration_id')->textInput(['maxlength' => true, 'readonly' => $readonly]) ?> -->
+        <?php
+        $dataPost=ArrayHelper::map(\app\models\Mrtindakan::find()
+            ->asArray()->all(), 'tindakan_id', 'nama_tindakan');
+        echo $form->field($model, 'nama_tindakan')
+            ->dropDownList(
+                $dataPost,
+            );
+        ?>
+    </div>
+
+    <div class="col-lg-4 col-md-12">
+        <!-- <?= $form->field($model, 'doctor_id')->textInput(['maxlength' => true]) ?> -->
+        <?php
+        $dataPost=ArrayHelper::map(\app\models\Mrtindakan::find()
+            ->asArray()->all(), 'tindakan_id', 'nama_tindakan');
+        echo $form->field($model, 'nama_tindakan')
+            ->dropDownList(
+                $dataPost,
+            );
+        ?>
+    </div>
+
+    <div class="col-lg-4 col-md-12">
+        <!-- <?= $form->field($model, 'hospital_id')->textInput(['maxlength' => true]) ?> -->
+        <?php
+        $dataPost=ArrayHelper::map(\app\models\Mrtindakan::find()
+            ->asArray()->all(), 'tindakan_id', 'nama_tindakan');
+        echo $form->field($model, 'nama_tindakan')
+            ->dropDownList(
+                $dataPost,
+            );
+        ?>
+    </div>
+</div>
+
+
+
+<div class="form-group">
+    <?= Html::submitButton('<i class="fa fa-save"></i> ' . Yii::t('app', 'Save'), ['class' => 'btn btn-primary']) ?>
+</div>
+<?php ActiveForm::end(); ?>

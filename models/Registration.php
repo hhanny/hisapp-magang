@@ -138,7 +138,7 @@ class Registration extends \yii\db\ActiveRecord
             'regsource_id' => Yii::t('app', 'Sumber'),
             'emergency_id' => Yii::t('app', 'Kegawatan'),
             'reason_id' => Yii::t('app', 'Alasan'),
-            'reg_num' => Yii::t('app', 'Reg Number'),
+            'reg_num' => Yii::t('app', 'No Reg'),
             'patient_id' => Yii::t('app', 'PID'),
             'mr_number' => Yii::t('app', 'No RM'),
             'date_in' => Yii::t('app', 'Tgl Masuk'),
@@ -387,6 +387,11 @@ class Registration extends \yii\db\ActiveRecord
     public function getIGDCode()
     {
         return Unit::find()->where(['hospital_id' => Yii::$app->user->identity->hospital_id, 'unitgroup_id' => self::UG_IGD, 'is_active' => true])->one();
+    }
+
+    public function getPatients()
+    {
+        return $this->hasMany(Patient::className(), ['patient_id' => 'patient_id']);
     }
 
     public static function getActive($id)

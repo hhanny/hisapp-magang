@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="col-lg-12 col-md-12">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <?= Html::encode($this->title) ?></h3>
+            <h3 class="card-title"><i class="fa fa-edit" aria-hidden="true"></i> <?= Html::encode($this->title) ?></h3>
             <div class="card-options">
             <?= Html::a('<i class="fa fa-pencil"></i> ' . Yii::t('app', 'Update'), ['update', 'id' => $model->rekammedik_id], ['class' => 'btn btn-primary btn-sm']) ?>
             <?= Html::a('<i class="fa fa-trash"></i> ' . Yii::t('app', 'Delete'), ['delete', 'id' => $model->rekammedik_id], [

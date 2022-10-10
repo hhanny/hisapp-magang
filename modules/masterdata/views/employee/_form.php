@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Employee */
 /* @var $form yii\widgets\ActiveForm */
@@ -21,6 +22,8 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'person_name')->textInput(['maxlength' => true]) ?>
     </div>
 </div>
+
+
 <div class="row">
     <div class="col-lg-6 col-md-12">
         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
