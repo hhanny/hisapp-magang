@@ -40,7 +40,7 @@ class Mrtindakan extends \yii\db\ActiveRecord
     {
         return [
             'tindakan_id' => 'Tindakan ID',
-            'nama_tindakan' => 'Nama Tindakan',
+            'nama_tindakan' => 'Tindakan',
         ];
     }
 }

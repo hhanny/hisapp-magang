@@ -174,7 +174,7 @@ use yii\helpers\ArrayHelper;
         <?php
         $dataPost=ArrayHelper::map(\app\models\Mrtindakan::find()
             ->asArray()->all(), 'tindakan_id', 'nama_tindakan');
-        echo $form->field($model, 'nama_tindakan')
+        echo $form->field($model, 'tindakan_1')
             ->dropDownList(
                 $dataPost,
             );
@@ -186,7 +186,7 @@ use yii\helpers\ArrayHelper;
         <?php
         $dataPost=ArrayHelper::map(\app\models\Mrtindakan::find()
             ->asArray()->all(), 'tindakan_id', 'nama_tindakan');
-        echo $form->field($model, 'nama_tindakan')
+        echo $form->field($model, 'tindakan_2')
             ->dropDownList(
                 $dataPost,
             );
@@ -198,7 +198,7 @@ use yii\helpers\ArrayHelper;
         <?php
         $dataPost=ArrayHelper::map(\app\models\Mrtindakan::find()
             ->asArray()->all(), 'tindakan_id', 'nama_tindakan');
-        echo $form->field($model, 'nama_tindakan')
+        echo $form->field($model, 'tindakan_3')
             ->dropDownList(
                 $dataPost,
             );
