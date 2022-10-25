@@ -391,8 +391,9 @@ class Registration extends \yii\db\ActiveRecord
 
     public function getPatients()
     {
-        return $this->hasMany(Patient::className(), ['patient_id' => 'patient_id']);
+        return $this->hasOne(Patient::className(), ['patient_id' => 'patient_id']);
     }
+
 
     public static function getActive($id)
     {

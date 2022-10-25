@@ -208,11 +208,6 @@ class Mrrekammedik extends \yii\db\ActiveRecord
         return $this->hasMany(Patient::className(), ['patient_id' => 'patient_id']);
     }
 
-    // public function getPatient()
-    // {
-    //     return $this->hasMany(Patient::className(), ['patient_id' => 'patient_id']);
-    // }
-
     public static function getActive()
     {
         return self::find()->where(['is_active' => true, 'hospital_id' => Yii::$app->user->identity->hospital_id])->all();

@@ -30,11 +30,7 @@ class Mricd extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['icd_kode'], 'string', 'max' => 20],
-            [['deskripsi'], 'string', 'max' => 200],
-            [['keterangan'], 'string', 'max' => 100],
-            [['wabah'], 'string', 'max' => 1],
-            [['surv_urut', 'imun_jenis'], 'string', 'max' => 3],
+            [['icd_kode', 'deskripsi', 'keterangan', 'wabah', 'surv_urut', 'imun_jenis'], 'string', 'max' => 32767],
         ];
     }
 

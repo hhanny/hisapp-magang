@@ -76,7 +76,6 @@ $this->params['breadcrumbs'][] = $this->title;
             //'patients.fullname',
             //'anemnesa',
             ['class' => 'yii\grid\ActionColumn'],
-
         ],
     ]); ?>
             <?php Pjax::end(); ?>

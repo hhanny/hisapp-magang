@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\helpers\Url;
+use app\components\BillingLogic;
+use app\components\Formatter;
+use app\models\UnitGroup;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Registration */
@@ -11,7 +15,25 @@ $this->params['breadcrumbs'][] = ['label' => 'Registrations', 'url' => ['index']
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="registration-view">
+
+<style>
+    .card-text {
+        margin-bottom: 5px;
+    }
+</style>
+<?php if ($model->regstts_id != \app\models\Registration::Active) : ?>
+    <div class="row" style="margin-bottom: 5px;">
+        <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissible fade show mb-0">
+                <strong>Pasien telah checkout pada
+                    tanggal <?= date('d-m-Y', strtotime($model->date_out)) . ' ' . date('H:i', strtotime($model->time_out)) . ' oleh petugas ' . $model->updatedBy->employee->person_name ?></strong>
+            </div>
+        </div>
+    </div>
+
+<?php endif ?>
+
+<!-- <div class="registration-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -67,4 +89,4 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-</div>
+</div> -->
