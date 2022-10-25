@@ -114,7 +114,7 @@ class Patient extends \yii\db\ActiveRecord
             'ethnic_id' => Yii::t('app', 'Ethnic ID'),
             'hospital_id' => Yii::t('app', 'Hospital ID'),
             'mr_number' => Yii::t('app', 'No RM'),
-            'fullname' => Yii::t('app', 'Nama Lengkap'),
+            'fullname' => Yii::t('app', 'Full Name'),
             'nickname' => Yii::t('app', 'Nama Panggilan'),
             'identity_number' => Yii::t('app', 'KTP/SIM'),
             'address' => Yii::t('app', 'Address'),
@@ -258,7 +258,7 @@ class Patient extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery|RegistrationQuery
      */
-    public function getRegistrations()
+    public function getRegistration()
     {
         return $this->hasMany(Registration::className(), ['patient_id' => 'patient_id']);
     }

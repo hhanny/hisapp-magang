@@ -3,18 +3,16 @@
 namespace app\modules\medical\controllers;
 
 use Yii;
-use app\models\Mrrekammedik;
-use app\models\Patient;
-use app\models\Mrrekammediksearch;
-use app\models\Mrdoktersearch;
+use app\models\Mrdiagnosaawal;
+use app\models\mrdiagnosaawalSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * MrrekammedikController implements the CRUD actions for Mrrekammedik model.
+ * MrdiagnosaawalController implements the CRUD actions for Mrdiagnosaawal model.
  */
-class MrrekammedikController extends Controller
+class MrdiagnosaawalController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -32,12 +30,12 @@ class MrrekammedikController extends Controller
     }
 
     /**
-     * Lists all Mrrekammedik models.
+     * Lists all Mrdiagnosaawal models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new Mrrekammediksearch();
+        $searchModel = new mrdiagnosaawalSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -47,8 +45,8 @@ class MrrekammedikController extends Controller
     }
 
     /**
-     * Displays a single Mrrekammedik model.
-     * @param integer $id
+     * Displays a single Mrdiagnosaawal model.
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -60,16 +58,16 @@ class MrrekammedikController extends Controller
     }
 
     /**
-     * Creates a new Mrrekammedik model.
+     * Creates a new Mrdiagnosaawal model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Mrrekammedik();
+        $model = new Mrdiagnosaawal();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->rekammedik_id]);
+            return $this->redirect(['view', 'id' => $model->ugddiagnosa_id]);
         }
 
         return $this->render('create', [
@@ -78,9 +76,9 @@ class MrrekammedikController extends Controller
     }
 
     /**
-     * Updates an existing Mrrekammedik model.
+     * Updates an existing Mrdiagnosaawal model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -89,7 +87,7 @@ class MrrekammedikController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->rekammedik_id]);
+            return $this->redirect(['view', 'id' => $model->ugddiagnosa_id]);
         }
 
         return $this->render('update', [
@@ -98,9 +96,9 @@ class MrrekammedikController extends Controller
     }
 
     /**
-     * Deletes an existing Mrrekammedik model.
+     * Deletes an existing Mrdiagnosaawal model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -112,15 +110,15 @@ class MrrekammedikController extends Controller
     }
 
     /**
-     * Finds the Mrrekammedik model based on its primary key value.
+     * Finds the Mrdiagnosaawal model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Mrrekammedik the loaded model
+     * @param string $id
+     * @return Mrdiagnosaawal the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Mrrekammedik::findOne($id)) !== null) {
+        if (($model = Mrdiagnosaawal::findOne($id)) !== null) {
             return $model;
         }
 

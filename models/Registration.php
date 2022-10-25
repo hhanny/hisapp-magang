@@ -335,6 +335,11 @@ class Registration extends \yii\db\ActiveRecord
         return false;
     }
 
+    public function getRegistration()
+    {
+        return $this->hasOne(Registration::className(), ['registration_id' => 'registration_id']);
+    }
+
     public function setIsNewUnit()
     {
         $mdl = self::find()->where(['patient_id' => $this->patient_id, 'unit_id' => $this->unit_id])->one();

@@ -3,27 +3,26 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
-use yii\models\Patient;
-
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\Mrrekammediksearch */
+/* @var $searchModel app\models\mrdiagnosaawalSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Medical Records';
+$this->title = 'Diagnosa IGD';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<!-- <div class="mrrekammedik-index">
+<!-- <div class="mrdiagnosaawal-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <p>
-    <?= Html::a('Create New Record', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    </div> -->
 
-<div class="col-lg-12 col-md-12">
+    <p>
+        <?= Html::a('Create Diagnosa IGD', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?> -->
+
+    <!-- <div class="col-lg-12 col-md-12">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <?= Html::encode
@@ -33,33 +32,29 @@ $this->params['breadcrumbs'][] = $this->title;
                  btn-primary btn-sm']) ?>
             </div>
         </div>
-        <div class="card-body pt-2">
+        <div class="card-body pt-2"> -->
 
         <?php Pjax::begin(); ?>
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+
         <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        //'dokterModel' => $dokterModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            
-            //* berelasi dengan rekam medik *//
-            //'rekammedik_id',
-            'jenisctev.jenis_ctev',
-            //'infonoso.infeksi_nosokomial',
-            'kasus.nama_kasus',
-            // 'statuskembali.nama_statuskembali',
-            //'tunaKode.tuna_nama',
-            'statuslengkap.nama_statuslengkap',
-            // 'ugdlayanan.ugd_layanan',
-            // 'alasandirujuk.alasan_dirujuk',
-            'ugddiagnosa.tanggal_kontrol',
-            'no_reg',
-            'registration.patient.fullname',
-            // 'patients.fullname' 
-            //'anemnesa',
+
+            'ugddiagnosa_id',
+            'keterangan',
+            'tanggal_kontrol',
+            [
+                'format' => 'raw',
+                'header' => 'Diagnosa',
+                'value' => function ($data) {
+                    return Html::a('<i class="fa fa-edit"></i>Diagnosa', ['create'], ['class' => 'btn
+                    btn-info btn-sm']);
+                }
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
