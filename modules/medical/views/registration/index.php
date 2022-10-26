@@ -72,11 +72,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'header' => 'Diagnosa',
                 'value' => function ($data) {
-                    return Html::a('<i class="fa fa-edit"></i> Diagnosa', ['create'], ['class' => 'btn btn-info btn-sm']);
+                    return Html::a('<i class="fa fa-edit"></i> Diagnosa', ['create', 'id' => $data ->registration_id], ['create'], ['class' => 'btn btn-info btn-sm']);
                 }
             ],
-
-            
         ],
     ]); ?>
             <?php Pjax::end(); ?>

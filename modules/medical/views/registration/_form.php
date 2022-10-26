@@ -15,15 +15,14 @@ use yii\widgets\Pjax;
         margin-bottom: 5px;
     }
 </style>
-<?php if ($model->regstts_id != \app\models\Registration::Active) : 
-    //var_dump($model); exit;
+<?php if ($model->regstts_id != \app\models\Registration::Active) :
+    // print_r($model); exit;
     ?>
     <div class="row" style="margin-bottom: 5px;">
         <div class="col-md-12">
             <div class="alert alert-danger alert-dismissible fade show mb-0">
                 <strong>Pasien telah checkout pada
                     tanggal <?= date('d-m-Y', strtotime($model->date_out)) . ' ' . date('H:i', strtotime($model->time_out)) . ' oleh petugas ' . $model->updatedBy->employee->person_name ?></strong>
-                    
             </div>
         </div>
     </div>
@@ -117,7 +116,7 @@ use yii\widgets\Pjax;
         <!-- <?= $form->field($model, 'doctor_id')->textInput(['maxlength' => true]) ?> -->
         <?php
         $dataPost=ArrayHelper::map(\app\models\Mricd::find()
-            ->asArray()->all(), 'kasus_id', 'deskripsi');
+            ->asArray()->all(), 'icd_kode', 'deskripsi');
         echo $form->field($model, 'deskripsi')
             ->dropDownList(
                 $dataPost,
@@ -254,8 +253,6 @@ use yii\widgets\Pjax;
         ?>
     </div>
 </div>
-
-
 
 <div class="form-group">
     <?= Html::submitButton('<i class="fa fa-save"></i> ' . Yii::t('app', 'Save'), ['class' => 'btn btn-primary']) ?>

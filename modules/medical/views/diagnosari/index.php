@@ -31,9 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <li class="nav-item"> 
                 <a class="nav-link active" onclick="showdata('dokter')" id="info-home-tab"  data-toggle="tab" href="javascript:void(0)" role="tab" aria-controls="info-home" aria-selected="true" data-nav="general"><i class="fa fa-user-md"></i>Dokter</a> 
             </li>
-            
         </div>
         </div>
-    </div>
+        </div>
 </div>
 
