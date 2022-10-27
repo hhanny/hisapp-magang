@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\mrdiagnosaawalSearch */
@@ -22,17 +23,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?> -->
 
-    <!-- <div class="col-lg-12 col-md-12">
+    <div class="col-lg-12 col-md-12">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title"><i class="fa fa-graduation-cap" aria-hidden="true"></i> <?= Html::encode
             ($this->title) ?></h3>
-            <div class=card-options>
+            <!-- <div class=card-options>
                 <?= Html::a('<i class="fa fa-plus-circle"> Create</i>', ['create'], ['class' => 'btn
                  btn-primary btn-sm']) ?>
-            </div>
+            </div> -->
         </div>
-        <div class="card-body pt-2"> -->
+        <div class="card-body pt-2">
 
         <?php Pjax::begin(); ?>
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -41,12 +42,15 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'ugddiagnosa_id',
-            'keterangan',
-            'tanggal_kontrol',
+            'reg_num',
+            'mr_number',
+            'patient.fullname', 
+            'patient.address',
+            // 'spesialis',
             [
                 'format' => 'raw',
                 'header' => 'Diagnosa',
@@ -55,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     btn-info btn-sm']);
                 }
             ],
-            ['class' => 'yii\grid\ActionColumn'],
+            // ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
             <?php Pjax::end(); ?>

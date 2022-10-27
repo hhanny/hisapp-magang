@@ -58,4 +58,9 @@ class Mrdiagnosaawal extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Mrrekammedik::className(), ['ugddiagnosa_id' => 'ugddiagnosa_id']);
     }
+
+    // public function getPatient()
+    // {
+    //     return $this->hasOne(Patient::className(), ['patient_id' => 'fullname']);
+    // }
 }

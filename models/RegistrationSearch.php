@@ -138,7 +138,7 @@ class RegistrationSearch extends Registration
 
         return $dataProvider;
     }
-
+  
     public function getPasienActive()
     {
         return self::find()->where(['hospital_id' => Yii::$app->user->identity->hospital_id, 'regstts_id' => self::Active]);

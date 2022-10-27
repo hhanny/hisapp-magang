@@ -1,23 +1,9 @@
 <?php
 
-namespace app\modules\medical\controllers;
+namespace app\controllers;
 
-use Yii;
-use app\models\Mrdiagnosaawal;
-use app\models\mrdiagnosaawalSearch;
-use app\models\Mrrekammediksearch;
-use yii\web\Controller;
-use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
-
-/**
- * MrdiagnosaawalController implements the CRUD actions for Mrdiagnosaawal model.
- */
-class MrdiagnosaawalController extends Controller
+class RegistrationController extends \yii\web\Controller
 {
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
@@ -36,8 +22,7 @@ class MrdiagnosaawalController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new Mrrekammediksearch();
-        //var_dump($searchModel); exit;
+        $searchModel = new RegistrationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -126,4 +111,5 @@ class MrdiagnosaawalController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }
