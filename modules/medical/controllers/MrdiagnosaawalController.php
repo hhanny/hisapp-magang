@@ -3,7 +3,7 @@
 namespace app\modules\medical\controllers;
 
 use Yii;
-use app\models\Mrdiagnosaawal;
+use app\models\Registration;
 use app\models\mrdiagnosaawalSearch;
 use app\models\Mrrekammediksearch;
 use yii\web\Controller;
@@ -36,13 +36,13 @@ class MrdiagnosaawalController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new Mrrekammediksearch();
+        $searchModel = new Registration();
         //var_dump($searchModel); exit;
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'dataProvider' => $dataProvider
         ]);
     }
 

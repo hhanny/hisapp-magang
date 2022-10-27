@@ -51,15 +51,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'patient.fullname', 
             'patient.address',
             // 'spesialis',
+            
             [
                 'format' => 'raw',
                 'header' => 'Diagnosa',
                 'value' => function ($data) {
-                    return Html::a('<i class="fa fa-edit"></i>Diagnosa', ['create'], ['class' => 'btn
+                    return Html::a(' <i class="fa fa-edit"></i>Diagnosa', ['create'], ['class' => 'btn
                     btn-info btn-sm']);
                 }
             ],
-            // ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
             <?php Pjax::end(); ?>

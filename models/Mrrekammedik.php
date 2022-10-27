@@ -45,11 +45,12 @@ class Mrrekammedik extends \yii\db\ActiveRecord
         return [
             [['infonoso_id', 'kasus_id', 'statuskembali_id', 'statuslengkap_id'], 'default', 'value' => null],
             [['infonoso_id', 'kasus_id', 'statuskembali_id', 'statuslengkap_id'], 'integer'],
-            [['jenisctev_id', 'ugdlayanan_id', 'alasandirujuk_id', 'ugddiagnosa_id'], 'string', 'max' => 2],
+            [['jenisctev_id', 'ugdlayanan_id', 'alasandirujuk_id', 'ugddiagnosa_id', 'registration_id'], 'string', 'max' => 2],
             [['tuna_kode'], 'string', 'max' => 10],
             [['no_reg'], 'string', 'max' => 12],
             [['anemnesa'], 'string', 'max' => 50],
             [['ugddiagnosa_id'], 'exist', 'skipOnError' => true, 'targetClass' => Mrdiagnosaawal::className(), 'targetAttribute' => ['ugddiagnosa_id' => 'ugddiagnosa_id']],
+            [['registration_id'], 'exist', 'skipOnError' => true, 'targetClass' => Registration::className(), 'targetAttribute' => ['registration_id' => 'registration_id']],
             [['tuna_kode'], 'exist', 'skipOnError' => true, 'targetClass' => Mrdisabilitas::className(), 'targetAttribute' => ['tuna_kode' => 'tuna_kode']],
             [['infonoso_id'], 'exist', 'skipOnError' => true, 'targetClass' => Mrinfeksinosokomial::className(), 'targetAttribute' => ['infonoso_id' => 'infonoso_id']],
             [['jenisctev_id'], 'exist', 'skipOnError' => true, 'targetClass' => Mrjenisctev::className(), 'targetAttribute' => ['jenisctev_id' => 'jenisctev_id']],
@@ -77,6 +78,7 @@ class Mrrekammedik extends \yii\db\ActiveRecord
             'alasandirujuk_id' => 'Reason for Referral',
             'ugddiagnosa_id' => 'Control Date',
             'no_reg' => 'Registration Number',
+            'registration_id' => 'Full Name',
             'anemnesa' => 'Anemnesa',
         ];
     }
