@@ -16,24 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 
-<style>
-    .card-text {
-        margin-bottom: 5px;
-    }
-</style>
-<?php if ($model->regstts_id != \app\models\Registration::Active) : ?>
-    <div class="row" style="margin-bottom: 5px;">
-        <div class="col-md-12">
-            <div class="alert alert-danger alert-dismissible fade show mb-0">
-                <strong>Pasien telah checkout pada
-                    tanggal <?= date('d-m-Y', strtotime($model->date_out)) . ' ' . date('H:i', strtotime($model->time_out)) . ' oleh petugas ' . $model->updatedBy->employee->person_name ?></strong>
-            </div>
-        </div>
-    </div>
-
-<?php endif ?>
-
-<!-- <div class="registration-view">
+<div class="registration-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -86,7 +69,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'is_deleted:boolean',
             'deleted_by',
             'deleted_time',
+            'icd_kode',
         ],
     ]) ?>
 
-</div> -->
+</div>

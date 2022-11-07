@@ -5,6 +5,7 @@ namespace app\modules\medical\controllers;
 
 use Yii;
 use app\models\Registration;
+use app\models\Mrrekammedik;
 use app\models\RegistrationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -68,6 +69,7 @@ class RegistrationController extends Controller
     public function actionCreate($id)
     {
         $model = Registration::findOne($id);
+        $model1 = Mrrekammedik::findOne($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->registration_id]);
@@ -75,6 +77,7 @@ class RegistrationController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'model1' => $model1,
         ]);
     }
 
