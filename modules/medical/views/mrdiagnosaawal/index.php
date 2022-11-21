@@ -50,14 +50,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'mr_number',
             'patient.fullname', 
             'patient.address',
+            'patient.phone',
             // 'spesialis',
             
             [
                 'format' => 'raw',
                 'header' => 'Diagnosa',
                 'value' => function ($data) {
-                    return Html::a(' <i class="fa fa-edit"></i>Diagnosa', ['create'], ['class' => 'btn
-                    btn-info btn-sm']);
+                    return Html::a('<i class="fa fa-edit"></i> Diagnosa', ['create', 'id' => $data ->registration_id], 
+                    ['create'], ['class' => 'btn btn-info btn-sm']);
                 }
             ],
         ],

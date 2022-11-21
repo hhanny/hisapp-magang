@@ -74,7 +74,9 @@ class Registration extends \yii\db\ActiveRecord
     const UG_RIN = 'RIN';
     const UG_IBS = 'IBS';
 
-    public $reg_patient_name, $class_name, $class_id, $room_name, $cls_room, $clstroom_id, $bed_num;
+    public $reg_patient_name, $class_name, $class_id, $room_name, $cls_room,
+     $clstroom_id, $bed_num, $anemnesa, $kegawatan, $dokter, $alasan_datang,
+      $cara_masuk, $kasus, $icd, $deskripsi, $tindak_lanjut, $diagnosa, $keterangan;
 
     /**
      * {@inheritdoc}

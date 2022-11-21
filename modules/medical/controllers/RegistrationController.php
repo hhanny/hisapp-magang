@@ -1,6 +1,16 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\medical\controllers;
+
+use Yii;
+use app\models\Registration;
+use app\models\mrdiagnosaawal;
+use app\models\mrdiagnosaawalSearch;
+use app\models\Mrrekammediksearch;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+
 
 class RegistrationController extends \yii\web\Controller
 {
@@ -49,9 +59,9 @@ class RegistrationController extends \yii\web\Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id)
     {
-        $model = new Mrdiagnosaawal();
+        $model = Registration::findOne($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->ugddiagnosa_id]);
