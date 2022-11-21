@@ -53,8 +53,6 @@ use yii\helpers\ArrayHelper;
         </div>
     </div>
 
-    
-    
         <?php $form = ActiveForm::begin([
             'id' => 'registration_id',
             'encodeErrorSummary' => false,
@@ -137,7 +135,7 @@ use yii\helpers\ArrayHelper;
         <?php
         $dataPost=ArrayHelper::map(\app\models\Mrdiagnosaawal::find()
         ->asArray()->all(), 'ugddiagnosa_id', 'ugddiagnosa_id');
-                echo $form->field($model, 'diagnosa')
+                echo $form->field($model, 'diagnosa') 
             ->dropDownList(
                 $dataPost,
             );
