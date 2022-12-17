@@ -46,9 +46,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'ugddiagnosa_id',
-            'keterangan',
-            'tanggal_kontrol',
+            'reg_num',
+            'mr_number',
+            'patient.fullname', 
+            'patient.address',
+            'patient.phone',
         ],
     ]) ?>
 

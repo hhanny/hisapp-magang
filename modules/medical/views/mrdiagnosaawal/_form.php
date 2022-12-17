@@ -78,9 +78,9 @@ use yii\helpers\ArrayHelper;
         $dataPost=ArrayHelper::map(\app\models\Mrrekammedik::find()
             ->asArray()->all(), '', '');
                 echo $form->field($model, 'kegawatan')
-            ->dropDownList(
-                $dataPost,
-            );
+            // ->dropDownList(
+            //     $dataPost,
+            // );
         ?>
     </div>
 
@@ -100,9 +100,9 @@ use yii\helpers\ArrayHelper;
         $dataPost=ArrayHelper::map(\app\models\Mrrekammedik::find()
             ->asArray()->all(), '', '');
                 echo $form->field($model, 'alasan_datang')
-            ->dropDownList(
-                $dataPost,
-            );
+            // ->dropDownList(
+            //     $dataPost,
+            // );
         ?>
     </div>
 
@@ -111,9 +111,9 @@ use yii\helpers\ArrayHelper;
         $dataPost=ArrayHelper::map(\app\models\Mrrekammedik::find()
             ->asArray()->all(), '', '');
                 echo $form->field($model, 'cara_masuk')
-            ->dropDownList(
-                $dataPost,
-            );
+            // ->dropDownList(
+            //     $dataPost,
+            // );
         ?>
     </div>
 

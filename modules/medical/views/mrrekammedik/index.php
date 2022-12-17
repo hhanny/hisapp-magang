@@ -48,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //* berelasi dengan rekam medik *//
             //'rekammedik_id',
             'jenisctev.jenis_ctev',
+            'registration.patient.fullname',
             //'infonoso.infeksi_nosokomial',
             'kasus.nama_kasus',
             // 'statuskembali.nama_statuskembali',
@@ -57,8 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'alasandirujuk.alasan_dirujuk',
             'ugddiagnosa.tanggal_kontrol',
             'no_reg',
-            'registration.patient.fullname',
-            // 'patients.fullname' 
+            // 'patient.fullname',
             //'anemnesa',
             ['class' => 'yii\grid\ActionColumn'],
         ],

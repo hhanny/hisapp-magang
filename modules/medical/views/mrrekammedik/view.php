@@ -49,11 +49,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-             //'rekammedik_id',
-            //'jenisctev.jenis_ctev',
+            //'rekammedik_id',
+            'jenisctev.jenis_ctev',
+            'registration.patient.fullname',
             //'infonoso.infeksi_nosokomial',
             'kasus.nama_kasus',
-            'statuskembali.nama_statuskembali',
+            // 'statuskembali.nama_statuskembali',
             //'tunaKode.tuna_nama',
             'statuslengkap.nama_statuslengkap',
             'ugdlayanan.ugd_layanan',

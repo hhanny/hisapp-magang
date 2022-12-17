@@ -33,6 +33,8 @@ class Mrrekammedik extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $fullname;
+
     public static function tableName()
     {
         return 'mrrekammedik';

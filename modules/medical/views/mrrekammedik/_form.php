@@ -16,6 +16,27 @@ use app\models\Mrrekammedik;
 
     <?php $form = ActiveForm::begin(); ?>
 
+<?php
+        $dataPost=ArrayHelper::map(\app\models\Patient::find()
+            ->asArray()->all(), 'fullname', 'fullname');
+        echo $form->field($model, 'fullname')
+            ->dropDownList(
+                $dataPost,
+                // ['kasus_id'=>'Kasus ID']
+            );
+    ?>
+
+<?php
+        $dataPost=ArrayHelper::map(\app\models\Mrjenisctev::find()
+            ->asArray()->all(), 'jeniscetv_id', 'jenis_ctev');
+        echo $form->field($model, 'jenisctev')
+            ->dropDownList(
+                $dataPost,
+                // ['kasus_id'=>'Kasus ID']
+            );
+    ?>
+
+
     <?php
         $dataPost=ArrayHelper::map(\app\models\Mrkasus::find()
             ->asArray()->all(), 'kasus_id', 'nama_kasus');

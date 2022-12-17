@@ -4,8 +4,9 @@ namespace app\modules\medical\controllers;
 
 use Yii;
 use app\models\Mrrekammedik;
-use app\models\Patient;
 use app\models\Mrrekammediksearch;
+use app\models\Patient;
+use app\models\PatientSearch;
 use app\models\Mrdoktersearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
